@@ -1,0 +1,28 @@
+<%= form_with model: @event, url: { action: :create }, local: true do |f| %>
+
+  <div class="field">
+    
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date %>
+    <%= f.datetime_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_date %>
+    <%= f.datetime_select :end_date %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "新規作成", class: "btn btn-primary" %>
+  </div>
+<% end %>

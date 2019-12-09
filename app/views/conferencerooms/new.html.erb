@@ -1,0 +1,42 @@
+<div class="container-hluid">
+  <div class="row no-gutters">
+    <div class="col-3 bg-primary ">
+      <h1>test</h1>
+      <h1>test</h1>
+      <h1>test</h1>
+    </div>
+    <div class="col-9">
+      <hr>
+      <br>
+    <h1>会議室の新規登録</h1>
+    <br>
+ 
+    <div class="border col-5">
+      <br>
+      <div class="row">
+        
+        <%= form_with model: @conferenceroom do |f| %>
+          <%= f.label :conferenceroomname %>
+          <%= f.text_field :conferenceroomname %>
+        
+        　<%= f.label :people %>
+          <%= f.text_field :people %>
+          
+          <%= f.label :price %>
+          <%= f.text_field :price %>
+          
+          <%= f.label :starttime %>
+          <%= f.text_field :starttime %>
+          
+          <%= f.label :endtime %>
+          <%= f.text_field :endtime %>
+          
+          <%= f.label :remarks %>
+          <%= f.text_field :remarks %>
+          
+          <%= f.submit "登録", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

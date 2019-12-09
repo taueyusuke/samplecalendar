@@ -1,0 +1,38 @@
+<div class="container-hluid">
+  <div class="row no-gutters">
+    <div class="col-3 bg-primary ">
+      <h1>test</h1>
+      <h1>test</h1>
+      <h1>test</h1>
+    </div>
+    <div class="col-9">
+      <hr>
+      <br>
+    <h1>マイページ</h1>
+    <br>
+ 
+    <div class="border col-5">
+      <br>
+      <div class="row">
+        <% if @user == current_user %>
+          <%= link_to "プロフィールを編集", edit_user_registration_path(@user), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <div class="row">
+        <div>
+          <%= @user.last_name %>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <%= @user.first_name %>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <%= @user.email %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

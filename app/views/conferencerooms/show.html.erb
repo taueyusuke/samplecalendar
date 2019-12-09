@@ -1,0 +1,23 @@
+<div class="container-hluid">
+  <div class="row no-gutters">
+    <div class="col-3 bg-primary ">
+      <h1>test</h1>
+      <h1>test</h1>
+    </div>
+    <div class="col-9">
+      <hr>
+      <div>
+        <%= @conferenceroom.conferenceroomname %>
+      </div>
+      <div>
+        <%= link_to "新規登録", new_conferenceroom_event_path(@conferenceroom), class: "btn btn-primary" %>
+      </div>
+      <div>
+        <%= link_to "予約の編集", edit_conferenceroom_event_path(@conferenceroom), class: "btn btn-primary" %>
+      </div>
+    </div>
+    <div class="row">
+      <div id="calendar"></div>
+    </div>
+  </div>
+</div>

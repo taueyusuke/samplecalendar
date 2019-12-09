@@ -1,0 +1,38 @@
+<div class="container-hluid">
+  <div class="row no-gutters">
+    <div class="col-3 bg-primary ">
+      <h1>test</h1>
+      <h1>test</h1>
+      <h1>test</h1>
+    </div>
+    <div class="col-9">
+      <hr>
+      <br>
+    <h1>予約の編集</h1>
+    <br>
+ 
+    <div class="border col-5">
+      <br>
+      <div class="row">
+        <%= form_with model: @event, url: conferenceroom_event_path(@event), local: true do |f| %>
+          <%= f.label :start_date %>
+          <%= f.text_field :start_date, class: "form-control" %>
+          
+          <%= f.label :end_date %>
+          <%= f.text_field :end_date, class: "form-control" %>
+          
+          <%= f.label :title %>
+          <%= f.text_field :title, class: "form-control" %>
+          
+          <%= f.label :content %>
+          <%= f.text_field :content, class: "form-control" %>
+          
+          <div>
+            <%= link_to "削除", conferenceroom_event_path(@event), method: :delete, class: "btn btn-danger" %>
+            <%= f.submit "編集", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

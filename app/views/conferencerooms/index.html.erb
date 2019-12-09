@@ -1,0 +1,52 @@
+<div class="container-hluid">
+  <div class="row no-gutters">
+    <div class="col-3 bg-primary ">
+      <h1>test1</h1>
+      <div>
+        <% if current_user %>
+          <%= link_to "マイカレンダー", conferenceroom_events_path(current_user), class: "text-muted" %>
+        <% end %>
+      </div>
+      <div>
+        <% if current_user %>
+          <%= link_to "マイページ", user_path(current_user), class: "text-muted" %>
+        <% end %>
+      </div>
+      <h1>test4</h1>
+    </div>
+    <div class="col-9">
+      <hr>
+      <% if user_signed_in? %> <%# この行を追加する %>
+        <%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
+      <% end %>
+      <br>
+    <h1>会議室一覧</h1>
+    <div>
+        <%= link_to "新規登録", new_conferenceroom_path, class: "btn btn-primary" %>
+    </div>
+    <br>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">会議室名</th>
+          <th scope="col">収容人数</th>
+          <th scope="col">利用金額</th>
+          <th scope="col">使用可能時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @conferenceroom.each do |conferenceroom| %>
+          <tr>
+            <td><%= conferenceroom.conferenceroomname %></td>
+            <td><%= conferenceroom.people %></td>
+            <td><%= conferenceroom.price %></td>
+            <td><%= conferenceroom.start_date %> ~ <%= conferenceroom.end_date %></td>
+            <td><%= link_to "編集", edit_conferenceroom_path(conferenceroom), class: "btn btn-primary" %></td>
+            <td><%= link_to "カレンダー", conferenceroom_path(conferenceroom), class: "btn btn-primary" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
