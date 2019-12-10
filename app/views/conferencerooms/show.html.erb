@@ -12,10 +12,27 @@
       <div>
         <%= link_to "新規登録", new_conferenceroom_event_path(@conferenceroom), class: "btn btn-primary" %>
       </div>
-      <div>
-        <%= link_to "予約の編集", edit_conferenceroom_event_path(@conferenceroom), class: "btn btn-primary" %>
-      </div>
     </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">タイトル</th>
+          <th scope="col">内容</th>
+          <th scope="col">使用可能時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @event.each do |event| %>
+          <tr>
+            <td><%= event.title %></td>
+            <td><%= event.content %></td>
+            <td><%= event.start_date %> ~ <%= event.end_date %></td>
+            <td><%= link_to "編集", edit_conferenceroom_event_path(@conferenceroom,event), class: "btn btn-primary" %></td>
+            <td><%= link_to "削除", conferenceroom_event_path(@event), method: :delete, class: "btn btn-danger" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
     <div class="row">
       <div id="calendar"></div>
     </div>

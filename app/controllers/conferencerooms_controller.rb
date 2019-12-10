@@ -10,7 +10,7 @@ class ConferenceroomsController < ApplicationController
     facility.save
     @conferenceroom = Conferenceroom.new(conferenceroom_params)
     @conferenceroom.facility_id = 1
-    if @conferenceroom.save
+    if @conferenceroom.save!
       flash[:success] = "会議室を登録しました"
       redirect_to root_url
     else
